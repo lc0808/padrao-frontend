@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        montserrat: "var(--font-montserrat)",
         saira: "var(--font-saira)",
       },
     },
