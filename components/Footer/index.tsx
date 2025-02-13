@@ -1,7 +1,13 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "../Button";
+import { ProductCategory } from "../../types/product";
+import { useProductContext } from "../../contexts/ProductContext";
 
 export default function Footer() {
+  const { setActiveFilter } = useProductContext();
+
   return (
     <div className="font-montserrat flex flex-row justify-between w-full items-center p-2 sm:p-6 pb-0 sm:pb-1 bg-[#f2f2f2]">
       <Image
@@ -12,31 +18,35 @@ export default function Footer() {
         className="w-[160px] sm:w-[200px] md:w-[300px] h-auto"
         priority
       />
-      <div className="p-2 sm:p-7 flex flex-row gap-2 sm:gap-9">
-        <Link
-          href={"/"}
-          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base"
+      <div className="p-0.5 sm:p-6 flex flex-row gap-1.5 sm:gap-9">
+        <Button
+          variant={"ghost"}
+          onClick={() => setActiveFilter(ProductCategory.All)}
+          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base max-sm:px-0"
         >
           Home
-        </Link>
-        <Link
-          href={"/"}
-          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base"
+        </Button>
+        <Button
+          variant={"ghost"}
+          onClick={() => setActiveFilter(ProductCategory.Sneakers)}
+          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base max-sm:px-0"
         >
           Tênis
-        </Link>
-        <Link
-          href={"/"}
-          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base"
+        </Button>
+        <Button
+          variant={"ghost"}
+          onClick={() => setActiveFilter(ProductCategory.TShirts)}
+          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base max-sm:px-0"
         >
           Camisetas
-        </Link>
-        <Link
-          href={"/"}
-          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base"
+        </Button>
+        <Button
+          variant={"ghost"}
+          onClick={() => setActiveFilter(ProductCategory.Pants)}
+          className="hover:font-medium transition-all ease-in-out duration-150 text-xs sm:text-base max-sm:px-0.5"
         >
           Calças
-        </Link>
+        </Button>
       </div>
     </div>
   );
