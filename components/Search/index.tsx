@@ -2,9 +2,10 @@
 
 import { Saira } from "next/font/google";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { debounce } from "../../hooks/useDebounce";
 import { useResponsivePlaceholder } from "../../hooks/useResponsivePlaceholder";
+import { useProductContext } from "../../contexts/ProductContext";
 
 const saira = Saira({
   subsets: ["latin"],
@@ -13,7 +14,6 @@ const saira = Saira({
 });
 
 type SearchProps = {
-  onSearch: (term: string) => void;
   placeholder?: string;
   mobilePlaceholder?: string;
   className?: string;
@@ -21,33 +21,27 @@ type SearchProps = {
 };
 
 const SearchInput: React.FC<SearchProps> = ({
-  onSearch,
   placeholder = "Buscar ...",
   mobilePlaceholder = "Buscar ...",
   className,
   delay = 500,
 }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const { searchTerm, setSearchTerm } = useProductContext();
 
   const placeholderText = useResponsivePlaceholder(
     placeholder,
     mobilePlaceholder
   );
 
-  const debouncedSearch = useMemo(
-    () =>
-      debounce((term: string) => {
-        if (term.trim()) {
-          onSearch(term);
-        }
-      }, delay),
-    [onSearch, delay]
+  const debouncedSetSearch = useMemo(
+    () => debounce((term: string) => setSearchTerm(term), delay),
+    [setSearchTerm, delay]
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
-    debouncedSearch(value);
+    debouncedSetSearch(value);
   };
 
   return (
