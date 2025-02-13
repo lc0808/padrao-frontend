@@ -20,9 +20,6 @@ export default function Header() {
         <Search
           placeholder="Quero comprar algo específico ..."
           className="w-fit sm:w-96"
-          onSearch={function (term: string): void {
-            throw new Error("Function not implemented.");
-          }}
         />
         <Link
           href={"/login"}
