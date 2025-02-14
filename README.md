@@ -7,7 +7,7 @@ Este projeto é um desafio para implementar um e-commerce de vestuário utilizan
 - **Next.js** (React)
 - **TypeScript**
 - **Tailwind CSS**
-- **Heroicons e Lucide-react**(para ícones)
+- **Heroicons e Lucide-react** (para ícones)
 - **Context API** para gerenciamento de estado do carrinho
 - **LocalStorage** para persistência do carrinho
 
@@ -15,7 +15,7 @@ Este projeto é um desafio para implementar um e-commerce de vestuário utilizan
 
 - ✅ Listagem de produtos com paginação (realizada no frontend)
 - ✅ Filtragem por categorias fixas (Camisetas, Calças, Tênis)
-- ✅ Busca de produtos por nome
+- ✅ Busca de produtos por nome, com gerenciamento de estado usando Context API
 - ✅ Página de detalhes do produto
 - ✅ Adicionar e remover produtos do carrinho
 - ✅ Exibição dinâmica do número de itens no carrinho
@@ -50,7 +50,7 @@ A aplicação consome a API JSON Server disponibilizada pelos organizadores do d
 ## 📌 Diferenciais Implementados
 
 - Estruturação modular e componentização eficiente.
-- Gerenciamento de estado do carrinho com Context API e LocalStorage.
+- Gerenciamento de estado do carrinho, search e produtos com Context API e LocalStorage.
 - Interface responsiva e acessível para diferentes dispositivos.
 - Histórico de commits seguindo o padrão **Conventional Commits**.
 
