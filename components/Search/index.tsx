@@ -1,17 +1,10 @@
 "use client";
 
-import { Saira } from "next/font/google";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import React, { useMemo } from "react";
 import { debounce } from "../../hooks/useDebounce";
 import { useResponsivePlaceholder } from "../../hooks/useResponsivePlaceholder";
 import { useProductContext } from "../../contexts/ProductContext";
-
-const saira = Saira({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-saira",
-});
 
 type SearchProps = {
   placeholder?: string;
@@ -46,7 +39,7 @@ const SearchInput: React.FC<SearchProps> = ({
 
   return (
     <div
-      className={`${saira.variable} font-saira  ${className} flex items-center bg-[#f3f5f5] rounded-lg p-2 px-4 w-full`}
+      className={`font-saira  ${className} flex items-center bg-[#f3f5f5] rounded-lg p-2 px-4 w-full`}
     >
       <input
         type="text"
