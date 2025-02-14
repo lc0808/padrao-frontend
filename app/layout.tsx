@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Saira } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Providers } from "./providers";
 import { ProductProvider } from "../contexts/ProductContext";
+import { CartProvider } from "../contexts/CartContext";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "ECommerce",
@@ -17,6 +19,12 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+const saira = Saira({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-saira",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,14 +33,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} antialiased flex flex-col min-h-screen`}
+        className={`${montserrat.variable} ${saira.variable}  antialiased flex flex-col min-h-screen`}
       >
         <Providers>
-          <ProductProvider>
-            <Header />
-            <main className="flex-grow ">{children}</main>
-            <Footer />
-          </ProductProvider>
+          <CartProvider>
+            <ProductProvider>
+              <Toaster />
+              <Header />
+              <main className="flex-grow ">{children}</main>
+              <Footer />
+            </ProductProvider>
+          </CartProvider>
         </Providers>
       </body>
     </html>
