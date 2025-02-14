@@ -8,7 +8,7 @@ import { useProductContext } from "../../../contexts/ProductContext";
 import Loading from "../../../components/Loading";
 import { Button } from "../../../components/Button";
 import { HeartIcon } from "@heroicons/react/24/outline";
-import Breadcrumb from "../../../components/Breadcrump";
+import Breadcrumb from "../../../components/Breadcrumb";
 import { useCartContext } from "../../../contexts/CartContext";
 import toast from "react-hot-toast";
 

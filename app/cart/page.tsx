@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Breadcrumb from "../../components/Breadcrump";
+import Breadcrumb from "../../components/Breadcrumb";
 import { Button } from "../../components/Button";
 import CartItem from "../../components/CartItem";
 import CartSummary from "../../components/CartSummary";
