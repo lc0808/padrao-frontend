@@ -11,7 +11,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useLocalStorage<CartItem[]>("cart", []);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  useState(() => {
     try {
       const savedCart = localStorage.getItem("cart");
       if (savedCart) {
@@ -21,7 +21,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       console.error("Error loading cart:", error);
     }
     setIsLoading(false);
-  }, []);
+  });
 
   useEffect(() => {
     if (!isLoading) {
