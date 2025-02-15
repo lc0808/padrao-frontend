@@ -71,12 +71,18 @@ export default function ProductPage() {
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
               <div className="flex flex-row justify-between items-center">
-                <h1 className="text-3xl font-bold">{product.name}</h1>
-                <button onClick={() => setIsFavorite(!isFavorite)}>
+                <h1 className="text-3xl font-bold" data-testid="product-name">
+                  {product.name}
+                </h1>
+                <button
+                  onClick={() => setIsFavorite(!isFavorite)}
+                  data-testid="favorite-button"
+                >
                   <HeartIcon
                     className={`h-6 w-6 ${
                       isFavorite ? "fill-red-500 text-red-500" : ""
                     }`}
+                    data-testid="favorite-icon"
                   />
                 </button>
               </div>
@@ -98,13 +104,18 @@ export default function ProductPage() {
               </div>
             </div>
 
-            <h1 className="text-3xl">Descrição</h1>
+            <h1 className="text-3xl" data-testid="description-title">
+              Descrição
+            </h1>
 
-            <p className="mt-4">{product.description}</p>
+            <p className="mt-4" data-testid="description-content">
+              {product.description}
+            </p>
           </div>
           <div>
             <Button
               className="font-light text-lg w-full"
+              data-testid="add-to-cart"
               onClick={handleAddToCart}
             >
               ADICIONAR AO CARRINHO

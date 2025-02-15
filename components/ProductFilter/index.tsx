@@ -28,6 +28,7 @@ const ProductFilter: React.FC = ({}) => {
             item.id === ProductCategory.All ? "col-span-3 sm:col-span-1" : ""
           }`}
           onClick={() => setActiveFilter(item.id)}
+          data-testid={`filter-${item.id}`}
         >
           {item.label}
         </Button>

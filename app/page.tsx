@@ -43,7 +43,9 @@ export default function Home() {
       {!isLoading && (
         <>
           <div className="flex justify-between px-10">
-            <p className="text-lg">{filteredProducts.length} Produtos</p>
+            <p className="text-lg" data-testid="Produtos">
+              {filteredProducts.length} Produtos
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-10 pt-14 ">

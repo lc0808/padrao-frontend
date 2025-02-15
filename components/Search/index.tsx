@@ -47,6 +47,7 @@ const SearchInput: React.FC<SearchProps> = ({
         onChange={handleChange}
         placeholder={placeholderText}
         className="border-none outline-none w-full bg-transparent text-xs sm:text-sm text-black"
+        data-testid="search-input"
       />
       <MagnifyingGlassIcon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-500" />
     </div>

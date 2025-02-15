@@ -41,12 +41,20 @@ const CartItem: React.FC<CartItemProps> = ({
       <div className="grid grid-rows-[auto,1fr,auto] gap-4 font-saira p-5">
         <div className="flex justify-between items-start">
           <div className="flex flex-col gap-8">
-            <h3 className="text-xl font-light">{name}</h3>
-            <p className="text-sm text-gray-600 font-light">{description}</p>
+            <h3 className="text-xl font-light" data-testid="product-name">
+              {name}
+            </h3>
+            <p
+              className="text-sm text-gray-600 font-light"
+              data-testid="description-content"
+            >
+              {description}
+            </p>
           </div>
           <button
             onClick={() => onRemove(id)}
             className="text-red-500 hover:bg-red-100 rounded-full p-1 transition-colors"
+            data-testid="remove-button"
           >
             <Trash2 className="h-5 w-5" />
           </button>
@@ -58,13 +66,17 @@ const CartItem: React.FC<CartItemProps> = ({
               onClick={() => onUpdateQuantity(id, quantity - 1)}
               className="p-1 hover:bg-gray-100 rounded"
               disabled={quantity <= 1}
+              data-testid="cart-item-minus"
             >
               <Minus className="h-4 w-4" />
             </button>
-            <span className="w-8 text-center">{quantity}</span>
+            <span className="w-8 text-center" data-testid="cart-item-quantity">
+              {quantity}
+            </span>
             <button
               onClick={() => onUpdateQuantity(id, quantity + 1)}
               className="p-1 hover:bg-gray-100 rounded"
+              data-testid="cart-item-plus"
             >
               <Plus className="h-4 w-4" />
             </button>

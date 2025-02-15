@@ -17,6 +17,7 @@ export default function Header() {
         width={300}
         height={300}
         className="w-[160px] sm:w-[200px] md:w-[300px] h-auto"
+        data-testid="logo"
       />
       <div className="flex flex-row items-center gap-2 sm:gap-4 w-full justify-end">
         <Search
@@ -30,11 +31,19 @@ export default function Header() {
           <UserIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
         </Link>
         <div className="relative p-2 rounded-full hover:bg-gray-200 transition-all ease-in-out duration-300">
-          <Link href={"/cart"} className="relative block">
+          <Link
+            href={"/cart"}
+            className="relative block"
+            data-testid="cart-button"
+          >
             <ShoppingBagIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
           </Link>
+
           {totalItems > 0 && (
-            <span className="absolute top-1 right-0 sm:top-1 sm:-right-0.5 bg-red-500 text-white text-xs font-bold rounded-full w-3.5 h-3.5 sm:w-4 sm:h-4 flex items-center justify-center">
+            <span
+              className="absolute top-1 right-0 sm:top-1 sm:-right-0.5 bg-red-500 text-white text-xs font-bold rounded-full w-3.5 h-3.5 sm:w-4 sm:h-4 flex items-center justify-center"
+              data-testid="cart-items"
+            >
               {totalItems > 99 ? "99+" : totalItems}
             </span>
           )}

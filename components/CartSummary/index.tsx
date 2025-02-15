@@ -31,6 +31,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ totalPrice, freight }) => {
           className="w-full mt-2"
           variant="destructive"
           onClick={clearCart}
+          data-testid="clear-cart"
         >
           LIMPAR CARRINHO
         </Button>

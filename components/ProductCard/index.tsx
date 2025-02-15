@@ -8,7 +8,7 @@ type ProductCardProps = {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Link href={`/product/${product.id}`}>
+    <Link href={`/product/${product.id}`} data-testid="product-card">
       <div className=" flex flex-col items-center font-montserrat ">
         <div className="relative">
           <Image
