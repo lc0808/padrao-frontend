@@ -8,8 +8,9 @@ Este projeto é um desafio para implementar um e-commerce de vestuário utilizan
 - **TypeScript**
 - **Tailwind CSS**
 - **Heroicons e Lucide-react** (para ícones)
-- **Context API** para gerenciamento de estado do carrinho
+- **Context API** para gerenciamento de estado do carrinho, search e produtos
 - **LocalStorage** para persistência do carrinho
+- **Playwright** para testes end-to-end (E2E)
 
 ## 📦 Funcionalidades
 
@@ -20,28 +21,43 @@ Este projeto é um desafio para implementar um e-commerce de vestuário utilizan
 - ✅ Adicionar e remover produtos do carrinho
 - ✅ Exibição dinâmica do número de itens no carrinho
 - ✅ Interface responsiva e acessível
+- ✅ Testes end-to-end (E2E) para validação automatizada
 
 ## 🛠 Como rodar o projeto
 
 1. **Clone o repositório**
 
 ```sh
-  git clone https://github.com/lc0808/projeto-frontend.git
+git clone https://github.com/lc0808/projeto-frontend.git
 ```
 
 2. **Instale as dependências**
 
 ```sh
-  yarn install
+yarn install
 ```
 
 3. **Inicie o servidor de desenvolvimento**
 
 ```sh
-  yarn dev
+yarn dev
 ```
 
 4. **Acesse a aplicação** Abra [http://localhost:3000](http://localhost:3000) no navegador.
+
+## 🧪 Testes End-to-End (E2E)
+
+O projeto inclui testes automatizados utilizando **Playwright** para garantir a qualidade da aplicação.
+
+### 🔍 Como executar os testes
+
+Para rodar os testes E2E, utilize o seguinte comando:
+
+```sh
+yarn test:e2e
+```
+
+Isso garantirá que todas as funcionalidades críticas sejam testadas automaticamente.
 
 ## 🔗 API
 
@@ -52,9 +68,10 @@ A aplicação consome a API JSON Server disponibilizada pelos organizadores do d
 - Estruturação modular e componentização eficiente.
 - Gerenciamento de estado do carrinho, search e produtos com Context API e LocalStorage.
 - Interface responsiva e acessível para diferentes dispositivos.
+- Testes automatizados com Playwright para validação da aplicação.
 - Histórico de commits seguindo o padrão **Conventional Commits**.
 
-## 📜 Licença
+## 📝 Licença
 
 Este projeto é apenas para fins de aprendizado e não possui uma licença específica.
 
